@@ -1,0 +1,30 @@
+doctype html
+html.no-js(lang='EN')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title= title
+
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    link(rel="shortcut icon", href="/favicon.png", type="image/x-icon")
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.1.0/css/all.css', integrity='sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=Josefin+Sans", rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/app.css')
+  body
+    include partials/preloader
+    include partials/navbar
+    
+    main
+      .sections
+        block content
+
+    include partials/footer
+
+    script(src='/javascripts/vendor/modernizr-3.6.0.min.js', async)
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js', integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=', crossorigin='anonymous', async)
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js', async)
+    script.
+      window.jQuery || document.write('<script src="javascripts/vendor/jquery-3.3.1.min.js"><\\/script>');
+    script(src='/javascripts/app.js')

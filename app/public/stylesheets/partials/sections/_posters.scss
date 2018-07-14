@@ -1,0 +1,69 @@
+.poster-block {
+    display: block;
+    overflow: hidden !important;
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+    margin: 0 auto;
+    transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+    @include media-breakpoint-down(md) {
+        padding-top: 100%;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        top: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+        border: 1px solid white;
+        z-index: 2;
+    }
+
+    .poster-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        z-index: 0;
+        transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &::after {
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            content: "";
+            background: rgba(0,0,0,0.35);
+            z-index: 1;
+        }
+    }
+
+    .poster-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        z-index: 3;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        font-size: 220%;
+        color: whitesmoke;
+        font-weight: 900;
+    }
+
+    &:hover {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+        .poster-bg {
+            transform: scale(1.1);
+        }
+    }
+}

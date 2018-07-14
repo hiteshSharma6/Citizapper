@@ -1,0 +1,68 @@
+nav
+    .nav-wrapper
+        .brand-wrapper
+            a(href='#!')
+                img.responsive-img(src='/images/brand/w.png', alt='')
+        .links-wrapper
+            a.sidenav-trigger(herf='#', data-target='slide-out')
+                i.fa.fa-bars
+            .links
+                a(href="#!") Blog
+                a.dropdown(href="#!") Explore
+                a(href="#!") Offers
+                a.right(href="#!") Login
+                a.right(href="#!") About
+                a.right(href="#!") Contact
+                
+        .search-wrapper
+          form
+            .input
+              input.browser-default(type="search", placeholder="Search for amazing stuff around...")
+              button.browser-default(type="submit") 
+                i.fa.fa-search
+
+ul#slide-out.sidenav
+  li
+    a(href='#!')
+      i.material-icons rss_feed
+      | Blog
+  li
+    a(href='#!')
+      i.material-icons explore
+      | Explore
+  li
+    a(href='#!')
+      i.material-icons local_offer
+      | Offers
+  li
+    .divider
+  li
+    a.subheader Citizapper
+  li
+    a(href='#!')
+      i.material-icons details
+      | About
+  li
+    a(href='#!')
+      i.material-icons email
+      | Contact
+  li
+    .divider
+  li
+    a.subheader Connect With Us!
+  li
+    a(href='#!')
+      i.fab.fa-facebook
+      | Facebook
+  li
+    a(href='#!')
+      i.fab.fa-twitter
+      | Twitter
+  li
+    a(href='#!')
+      i.fab.fa-instagram
+      | Instagram
+  li
+    a(href='#!')
+      i.fab.fa-youtube
+      | Youtube

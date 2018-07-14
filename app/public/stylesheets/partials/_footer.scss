@@ -1,0 +1,94 @@
+footer {
+    margin-top: 5rem;
+    position: relative;
+    padding: 4rem 0;
+    background: url('/images/utility/footer.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer [class^="col-"], footer [class*=" col-"] {
+    margin-bottom: 3rem;
+}
+
+footer .content {
+    background: rgba(33, 33, 33, 0.8);
+    color: #999999;
+    padding: {
+        top: 3rem;
+        left: 3rem;
+        right: 3rem;
+        bottom: 0;
+    };
+    @extend .z-depth-2;
+}
+
+footer a.brand {
+    display: block;
+}
+
+footer .title {
+    display: block;
+    padding: 0.1rem 0rem 0.15rem 1rem;
+    color: white;
+    text-transform: uppercase;
+    border-left: 3px solid $brand-color;
+    font-size: 125%;
+    letter-spacing: 2px;
+
+    &._m {
+        margin-top: 3rem;
+    }
+}
+
+footer .fsec {
+    margin-top: 1rem;
+}
+
+footer .description {
+    color: #e0e0e0;
+    font-size: 85%;
+    text-align: justify;
+}
+
+footer .social a {
+    display: inline-block;
+    font-size: 140%;
+    color: white;
+    padding: 10px;
+    margin-right: 5px;
+
+    @extend .z-depth-2; 
+
+    &:last-child {
+        margin-right: 0;
+    }
+    &.fa-facebook {
+        background: #3b5998;
+    }
+    &.fa-twitter {
+        background: #1da1f2;
+    }
+    &.fa-instagram {
+        background: #833ab4;
+    }
+    &.fa-youtube {
+        background: #ff0000;
+    }
+}
+
+footer .qlinks a {
+    display: block;
+    padding: 0.5rem 0;
+    color: white;
+    &:hover {
+        color: $brand-color;
+    }
+}
+
+footer .content .copyright {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 85%;
+}

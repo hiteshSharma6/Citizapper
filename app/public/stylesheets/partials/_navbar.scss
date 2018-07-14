@@ -1,0 +1,171 @@
+nav {
+    position: relative;
+    background: $brand-color;
+    width: 100%;
+
+    @extend .z-depth-2;
+}
+
+nav .nav-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        height: $nav-ht;
+        width: 95%;
+    }
+    
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+nav .nav-wrapper .brand-wrapper {
+    padding: 15px;
+    position: relative;
+    a { font-size: 0; line-height: 0; }
+
+    @include media-breakpoint-up(md) {
+        display: inline-block;
+        float: left;
+        height: $nav-ht;
+        padding: 0;
+        width: calc(2.5 * #{$nav-ht});
+    }
+}
+
+nav .nav-wrapper .links-wrapper {
+    position: relative;
+    display: inline-block;
+    height: $nav-ht;
+    .links {
+        display: none;
+    }
+    .sidenav-trigger {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+    @include media-breakpoint-up(lg) {
+        float: left;
+        width: calc(100% - calc(2.5 * #{$nav-ht}) - 300px);
+        .links {
+            display: block;
+            width: 100%;
+            padding: 10px 2rem;
+
+            a {
+                display: inline-block;
+                padding: 0 1.5rem;
+                height: 50px;
+                line-height: 50px;
+                color: white;
+                transition: all 0.1s ease-in-out;
+                &:hover {
+                    background: #ff4081;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(lg) {
+        float: right;
+        width: $nav-ht;
+
+        .links { display: none;}
+        .sidenav-trigger { 
+            display: block;
+            height: $nav-ht; 
+            line-height: $nav-ht;
+            font-size: 180%;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        z-index: 10;
+
+        .sidenav-trigger { 
+            display: block;
+            height: 35px; 
+            line-height: 35px;
+            font-size: 140%;
+        }
+    }
+}
+
+nav .nav-wrapper .search-wrapper {
+    position: relative;
+    display: inline-block;
+    height: $nav-ht;
+    background: $brand-color;
+
+    @include media-breakpoint-up(lg) {
+        float: right;
+        width: 300px;
+        form {
+            width: 100%;
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        float: left;
+        width: calc(100% - calc(2.5 * #{$nav-ht}) - #{$nav-ht});
+        form {
+            width: calc(100% - 30px);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        display: block;
+        height: 60px;
+        width: 100%;
+        form {
+            width: calc(100% - 30px);
+        }
+    }
+
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 40px;
+        @extend .z-depth-1;
+
+        .input {
+            display: block;
+            height: 40px;
+
+            input[type=search], button[type=submit] {
+                display: inline-block;
+                width: calc(100% - 40px);
+                height: 40px;
+                padding: 0 1rem;
+                border: 0;
+                outline: 0;
+            }
+
+            button[type=submit] {
+                width: 40px;
+                padding: 0;
+                float: right;
+                background: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.sidenav .fab {
+    font-size: 150%;
+}

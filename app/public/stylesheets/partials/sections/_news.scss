@@ -1,0 +1,21 @@
+.news {
+    color:#383838;
+    .news-img {
+        font-size: 0;
+        @extend .z-depth-2;
+    }
+    .news-title {
+        padding: 2rem;
+        font-size: 120%;
+        &:hover {color:$brand-color;}
+    }
+    .news-date {
+        text-align: center;
+        font-size: 85%;
+        @extend .iconed;
+        &::before {
+            content: "\f073";
+            margin-right: 0.5rem;
+        }
+    }
+}

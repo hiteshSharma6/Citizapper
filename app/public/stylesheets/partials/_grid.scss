@@ -1,0 +1,24 @@
+@-ms-viewport {
+    width: device-width;
+} // stylelint-disable-line at-rule-no-vendor-prefix
+
+@import "grid-partials/functions";
+@import "grid-partials/variables";
+@import "grid-partials/breakpoints";
+@import "grid-partials/grid-framework";
+@import "grid-partials/grid";
+@import "grid-partials/grid-1";
+@import "grid-partials/display";
+@import "grid-partials/flex";
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-down($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .break-row#{$infix}         {  
+            display: block;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+    }
+}
