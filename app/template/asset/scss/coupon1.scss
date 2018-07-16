@@ -1,0 +1,96 @@
+
+$discount-width: 30%;
+
+.coupon1 {
+  transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
+
+  &:hover {
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)
+  }
+
+  .discount {
+    width: $discount-width;
+    position: relative;
+
+    .in-discount {
+      position: absolute;
+      margin: 20%;
+      text-align: center;
+
+      .discount-amt {
+
+        h3 {
+          position: relative;
+          text-align: center;
+          margin-bottom: 0;
+
+          .percent {
+            top: 20%;
+            font-size: 15px;
+
+          }
+
+        }
+
+      }
+
+      .off {
+        font-size: 20px;
+        transition: inherit;
+        transform: translateX(-2px);
+      }
+
+    }
+
+  }
+
+  .details {
+    width: 100% - $discount-width;
+
+    .company-logo {
+      margin: 20px 15px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid darkgrey;
+      height: 60px;
+
+      img {
+        display: block;
+        height: 100%;
+        margin: auto;
+        max-width: 100%;
+        
+      }
+
+    }
+
+    .detail {
+      position: relative;
+
+      .description {
+        padding: 0 10px;
+
+        p {
+          line-height: 1.1;
+          letter-spacing: 1.1px;
+          word-spacing: 1px;
+          min-height: 30px;
+        }
+
+      }
+
+      .expire {
+        bottom: 0;
+        text-align: right;
+        font-size: 12px;
+        font-family: monospace;
+        padding-right: 2px;
+
+      }
+
+    }
+
+  }
+
+}
