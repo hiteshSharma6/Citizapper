@@ -1,0 +1,163 @@
+
+.coupon2 {
+  transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
+  margin-top: 20px;
+  transform-style: preserve-3d;
+
+  &:hover {
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .details {
+
+    .expire {
+      text-align: right;
+      font-size: 12px;
+      font-family: monospace;
+      padding-right: 2px;
+    }
+
+    .company-logo {
+      height: 100px;
+      margin: 5px 50px 0;
+      padding-bottom: 10px;
+
+      img {
+        display: block;
+        margin: auto;
+        height: 100%;
+        max-width: 100%;
+
+      }
+
+    }
+
+    .description {
+
+      p {
+        text-align: justify;
+        line-height: 1.1;
+        letter-spacing: 1.1px;
+        word-spacing: 1px;
+        min-height: 30px;
+        padding: 0 20px;
+      }
+
+    }
+
+  }
+
+  .discount {
+    perspective: 1000px;
+
+    &:hover .in-discount {
+      transform: rotateX(180deg);
+      
+    }
+
+    &,
+    .discount-amt,
+    .code {
+      width: 100%;
+      height: 50px;
+    }
+
+    .in-discount {
+      transition: 0.5s;
+      transform-style: preserve-3d;
+      position: relative;
+      transform-origin: center;
+      
+    }
+
+    .discount-amt,
+    .code {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .discount-amt {
+      z-index: 2;
+      transform: rotateX(0deg);
+      border: 1px solid lightgrey;
+      background-color: white;
+      
+      &:hover {
+        
+      }
+
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+
+        span:first-child {
+
+          .percent {
+            font-size: 25px;
+          }
+
+        }
+
+        .off {
+          font-weight: 100;
+          font-size: 28px;
+
+        }
+
+      }
+
+    }
+    
+    .code {
+      transform: rotateX(160deg);
+      background-color: white;
+      box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.04), 0 0px 4px 0 rgba(0, 0, 0, 0.02), 0 -2px 1px -1px rgba(0, 0, 0, 0.10);
+      
+    }
+    
+    .code2 {
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      
+    }
+
+  }
+  
+  .discount-2 {
+    height: 50px;
+    
+    .discount-amt-2 {
+      
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+
+        span:first-child {
+
+          .percent-2 {
+            font-size: 25px;
+          }
+
+        }
+
+        .off-2 {
+          font-weight: 100;
+          font-size: 28px;
+
+        }
+
+      }
+
+    }
+    
+  }
+
+}

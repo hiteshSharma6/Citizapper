@@ -1,0 +1,194 @@
+html {
+  font-family: "Josefin Sans", sans-serif !important;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.right-border-dashed {
+  border-right: 1px black dashed;
+}
+
+.top-border-dashed {
+  border-top: 1px black dashed;
+}
+
+.shift-up-1:hover {
+  transform: translateY(-1px);
+}
+
+.shift-up-2:hover {
+  transform: translateY(-2px);
+}
+
+.coupon1 {
+  transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
+}
+.coupon1:hover {
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.coupon1 .discount {
+  width: 30%;
+  position: relative;
+}
+.coupon1 .discount .in-discount {
+  position: absolute;
+  margin: 20%;
+  text-align: center;
+}
+.coupon1 .discount .in-discount .discount-amt h3 {
+  position: relative;
+  text-align: center;
+  margin-bottom: 0;
+}
+.coupon1 .discount .in-discount .discount-amt h3 .percent {
+  top: 20%;
+  font-size: 15px;
+}
+.coupon1 .discount .in-discount .off {
+  font-size: 20px;
+  transition: inherit;
+  transform: translateX(-2px);
+}
+.coupon1 .details {
+  width: 70%;
+}
+.coupon1 .details .company-logo {
+  margin: 20px 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid darkgrey;
+  height: 60px;
+}
+.coupon1 .details .company-logo img {
+  display: block;
+  height: 100%;
+  margin: auto;
+  max-width: 100%;
+}
+.coupon1 .details .detail {
+  position: relative;
+}
+.coupon1 .details .detail .description {
+  padding: 0 10px;
+}
+.coupon1 .details .detail .description p {
+  line-height: 1.1;
+  letter-spacing: 1.1px;
+  word-spacing: 1px;
+  min-height: 30px;
+}
+.coupon1 .details .detail .expire {
+  bottom: 0;
+  text-align: right;
+  font-size: 12px;
+  font-family: monospace;
+  padding-right: 2px;
+}
+
+.coupon2 {
+  transition: 0.4s all cubic-bezier(0.215, 0.61, 0.355, 1);
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px 0px;
+  margin-top: 20px;
+  transform-style: preserve-3d;
+}
+.coupon2:hover {
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.coupon2 .details .expire {
+  text-align: right;
+  font-size: 12px;
+  font-family: monospace;
+  padding-right: 2px;
+}
+.coupon2 .details .company-logo {
+  height: 100px;
+  margin: 5px 50px 0;
+  padding-bottom: 10px;
+}
+.coupon2 .details .company-logo img {
+  display: block;
+  margin: auto;
+  height: 100%;
+  max-width: 100%;
+}
+.coupon2 .details .description p {
+  text-align: justify;
+  line-height: 1.1;
+  letter-spacing: 1.1px;
+  word-spacing: 1px;
+  min-height: 30px;
+  padding: 0 20px;
+}
+.coupon2 .discount {
+  perspective: 1000px;
+}
+.coupon2 .discount:hover .in-discount {
+  transform: rotateX(180deg);
+}
+.coupon2 .discount,
+.coupon2 .discount .discount-amt,
+.coupon2 .discount .code {
+  width: 100%;
+  height: 50px;
+}
+.coupon2 .discount .in-discount {
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform-origin: center;
+}
+.coupon2 .discount .discount-amt,
+.coupon2 .discount .code {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.coupon2 .discount .discount-amt {
+  z-index: 2;
+  transform: rotateX(0deg);
+  border: 1px solid lightgrey;
+  background-color: white;
+}
+.coupon2 .discount .discount-amt h3 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+.coupon2 .discount .discount-amt h3 span:first-child .percent {
+  font-size: 25px;
+}
+.coupon2 .discount .discount-amt h3 .off {
+  font-weight: 100;
+  font-size: 28px;
+}
+.coupon2 .discount .code {
+  transform: rotateX(160deg);
+  background-color: white;
+  box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.04), 0 0px 4px 0 rgba(0, 0, 0, 0.02), 0 -2px 1px -1px rgba(0, 0, 0, 0.1);
+}
+.coupon2 .discount .code2 {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 10px;
+}
+.coupon2 .discount-2 {
+  height: 50px;
+}
+.coupon2 .discount-2 .discount-amt-2 h3 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+}
+.coupon2 .discount-2 .discount-amt-2 h3 span:first-child .percent-2 {
+  font-size: 25px;
+}
+.coupon2 .discount-2 .discount-amt-2 h3 .off-2 {
+  font-weight: 100;
+  font-size: 28px;
+}
+
+/*# sourceMappingURL=coupon-main.css.map */
