@@ -1,0 +1,24 @@
+html {
+  font-family: 'Josefin Sans', sans-serif !important;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.right-border-dashed {
+  border-right: 1px black dashed;
+}
+
+.top-border-dashed {
+  border-top: 1px black dashed;
+}
+
+.shift-up-1:hover {
+  transform: translateY(-1px);
+}
+
+.shift-up-2:hover {
+  transform: translateY(-2px);
+}
+
+@import 'coupon1';
+@import 'coupon2';
