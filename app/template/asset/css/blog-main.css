@@ -60,39 +60,39 @@ html {
 .blog .blog-description .meta-info h6 {
   display: inline-block;
 }
-.blog .blog-description .meta-info .author a {
+.blog .blog-description .meta-info .author-name a {
   line-height: 30px;
   padding-left: 10px;
 }
-.blog .blog-description .meta-info .author::before {
+.blog .blog-description .meta-info .author-name::before {
   content: "";
-  display: inline-block;
-  background: url("../image/study.png");
+  display: block;
+  background-image: url("../image/study.png");
   background-size: contain;
   width: 30px;
   height: 30px;
   float: left;
-  margin: 0 6px 0 0;
+  margin-right: 6px;
 }
 .blog .blog-description .meta-info .posted-on::before {
   content: "";
-  display: inline-block;
-  background: url("../image/calendar.png");
+  display: block;
+  background-image: url("../image/calendar.png");
   background-size: contain;
   width: 20px;
   height: 20px;
   float: left;
-  margin: 0 6px 0 0;
+  margin-right: 6px;
 }
 .blog .blog-description .meta-info .views::before {
   content: "";
-  display: inline-block;
-  background: url("../image/eye.png");
+  display: block;
+  background-image: url("../image/eye.png");
   background-size: contain;
   width: 20px;
   height: 20px;
   float: left;
-  margin: 0 6px 0 0;
+  margin-right: 6px;
 }
 .blog #content .post-pic {
   margin-bottom: 50px;
@@ -109,6 +109,62 @@ html {
 }
 .blog #content .article .layer img {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+}
+.blog .author {
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: aliceblue;
+  padding: 2vw 5vw;
+  display: flex;
+}
+.blog .author .profile {
+  display: inline-block;
+}
+.blog .author .profile .p-image {
+  width: 60%;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+.blog .author .profile .meta-info {
+  text-align: center;
+}
+.blog .author .profile .meta-info .t-articles {
+  display: inline-block;
+}
+.blog .author .profile .meta-info .t-articles::before {
+  content: "";
+  display: block;
+  background-image: url("../image/study.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+}
+.blog .author .profile .meta-info .t-views {
+  display: inline-block;
+}
+.blog .author .profile .meta-info .t-views::before {
+  content: "";
+  display: block;
+  background-image: url("../image/eye.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+}
+.blog .author .info {
+  text-align: center;
+}
+.blog .author .info .name h5 {
+  text-decoration: underline;
+}
+.blog .author .info .my-details {
+  font-family: "Josefin", sans-serif;
 }
 
 /*# sourceMappingURL=blog-main.css.map */
