@@ -1,0 +1,217 @@
+$font-josefin: 'Josefin', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$margin-right-default: 10px;
+
+
+@mixin box-shadow($z-depth, $v1:0, $v2:0, $v3:0) {
+  @if $z-depth == "z-depth-0" {
+    box-shadow: none !important;
+    
+  } @else if $z-depth == "z-depth-1" {
+    box-shadow: 0 2px 2px 0 rgba($v1, $v2, $v3, 0.14), 0 3px 1px -2px rgba($v1, $v2, $v3, 0.12), 0 1px 5px 0 rgba($v1, $v2, $v3, 0.2);
+    
+  } @else if $z-depth == "z-depth-1-half" {
+      box-shadow: 0 3px 3px 0 rgba($v1, $v2, $v3, 0.14), 0 1px 7px 0 rgba($v1, $v2, $v3, 0.12), 0 3px 1px -1px rgba($v1, $v2, $v3, 0.2);
+    
+  } @else if $z-depth == "z-depth-2" {
+      box-shadow: 0 4px 5px 0 rgba($v1, $v2, $v3, 0.14), 0 1px 10px 0 rgba($v1, $v2, $v3, 0.12), 0 2px 4px -1px rgba($v1, $v2, $v3, 0.3);
+    
+  } @else if $z-depth == "z-depth-3" {
+      box-shadow: 0 8px 17px 2px rgba($v1, $v2, $v3, 0.14), 0 3px 14px 2px rgba($v1, $v2, $v3, 0.12), 0 5px 5px -3px rgba($v1, $v2, $v3, 0.2);
+    
+  } @else if $z-depth == "z-depth-4" {
+      box-shadow: 0 16px 24px 2px rgba($v1, $v2, $v3, 0.14), 0 6px 30px 5px rgba($v1, $v2, $v3, 0.12), 0 8px 10px -7px rgba($v1, $v2, $v3, 0.2);
+  
+  } @else if $z-depth == "z-depth-5" {
+      box-shadow: 0 24px 38px 3px rgba($v1, $v2, $v3, 0.14), 0 9px 46px 8px rgba($v1, $v2, $v3, 0.12), 0 11px 15px -7px rgba($v1, $v2, $v3, 0.2);
+  
+  }
+
+}
+
+html {
+  font-family: $font-poppins !important;
+  margin-top: 20vw;
+  margin-bottom: 100px;
+}
+
+.border-right-solid {
+  border-right: 1px solid #379fff;
+  padding: 5px 2vw;
+  margin-right: 2vw;
+}
+
+.float-right {
+  float: right;
+}
+
+.img-md {
+  width: 50%;
+}
+
+
+.top-decorator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #448aff;
+  height: 30vw;
+  width: 100%;
+  z-index: -10;
+}
+
+@mixin for-before-selector($img-name, $width, $height, $margin-right: $margin-right-default) {
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../image/#{$img-name}");
+    background-size: contain;
+    width: $width;
+    height: $height;
+    float: left;
+    margin-right: $margin-right;
+  }
+}
+
+.blog {
+  @include box-shadow(z-depth-5, 63, 48, 255);
+  
+  padding: 20px 0;
+  z-index: 10;
+  background-color: #ffffff;
+
+.blog-description {
+  
+  h1 {
+    padding: 0 20px;
+    
+  }
+  
+  .tags {
+    padding: 30px 50px 0;
+    text-align: center;
+    
+    .tag {
+      border-radius: 10px;
+      background-color: rgba(68, 48, 255, 1);
+      padding: 5px 10px;
+      margin: 0 10px;
+      color: white;
+    }
+    
+  }
+  
+  .meta-info {
+    font-family: $font-josefin;
+    font-size: 18px;
+    padding: 2vw 5vw 1vw;
+        
+    h6 {
+      display: inline-block;
+    }
+    
+    .author-name a {
+      line-height: 30px;
+      padding-left: 10px;
+      
+    }
+    
+    .author-name {
+      @include for-before-selector("study.png", 30px, 30px, 6px);
+    }
+    
+    .posted-on {
+      @include for-before-selector("calendar.png", 20px, 20px, 6px);
+    }
+    
+    .views {
+      @include for-before-selector("eye.png", 20px, 20px, 6px);
+    }
+
+  }
+  
+}
+
+#content {
+  
+.post-pic {
+  margin-bottom: 50px;
+}
+  
+  .article {
+    padding: 0 5vw;
+    
+    h2, h3 {
+      font-family: $font-josefin;
+    }
+    
+    .layer {
+      margin: 5vw;
+      padding: 1vw;
+      
+      img {
+        box-shadow:0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -7px rgba(0,0,0,0.2);
+        
+      }
+      
+    }
+    
+  }
+}
+  
+  .author {
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding: 2vw 5vw;
+    display: flex;
+    
+    .profile {
+      display: inline-block;
+      
+      .p-image {
+        width: 60%;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+        
+      }
+      
+      .meta-info {
+        text-align: center;
+        
+        .t-articles {
+          display: inline-block;
+          @include for-before-selector("study.png", 20px, 20px);
+          
+        }
+        
+        .t-views {
+          display: inline-block;
+          @include for-before-selector("eye.png", 20px, 20px);
+          
+        }
+        
+      }
+      
+    }
+      
+    .info {
+      text-align: center;
+      
+      .name h5 {
+        text-decoration: underline;
+      }
+      
+      .my-details {
+        font-family: $font-josefin;
+      }
+      
+    }
+    
+  }
+
+  
+}
