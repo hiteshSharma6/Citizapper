@@ -1,0 +1,13 @@
+
+@mixin img-before-selector($img-name, $width, $height, $margin-right: $margin-right-default) {
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../image/#{$img-name}");
+    background-size: contain;
+    width: $width;
+    height: $height;
+    float: left;
+    margin-right: $margin-right;
+  }
+}
