@@ -18,10 +18,6 @@ html {
   float: right;
 }
 
-.img-md {
-  width: 50%;
-}
-
 .top-decorator {
   position: absolute;
   top: 0;
@@ -33,7 +29,7 @@ html {
 }
 
 .blog {
-  box-shadow: 0 24px 38px 3px rgba(63, 48, 255, 0.14), 0 9px 46px 8px rgba(63, 48, 255, 0.12), 0 11px 15px -7px rgba(63, 48, 255, 0.2);
+  box-shadow: 0 24px 38px 3px rgba(88, 158, 255, 0.14), 0 9px 46px 8px rgba(88, 158, 255, 0.12), 0 11px 15px -7px rgba(88, 158, 255, 0.2);
   padding: 20px 0;
   z-index: 10;
   background-color: #ffffff;
@@ -107,14 +103,18 @@ html {
   margin: 5vw;
   padding: 1vw;
 }
+.blog #content .article .layer.img-half {
+  width: 50%;
+  display: inline-block;
+}
 .blog #content .article .layer img {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
 }
 .blog .author {
   width: 70%;
-  margin: auto;
+  margin: 200px auto 50px;
   border-radius: 10px;
-  background-color: aliceblue;
+  background-color: rgba(68, 138, 255, 0.05);
   padding: 2vw 5vw;
   display: flex;
 }
@@ -165,6 +165,74 @@ html {
 }
 .blog .author .info .my-details {
   font-family: "Josefin", sans-serif;
+}
+
+.comments {
+  margin-top: 100px;
+  margin-left: 5vw;
+}
+.comments .posted-comments .main-comment {
+  margin: 100px auto;
+}
+.comments .posted-comments .main-comment .comment {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-top: 30px;
+  border-radius: 20px 5px 20px 5px;
+}
+.comments .posted-comments .main-comment .comment .comment-info {
+  margin: 0;
+}
+.comments .posted-comments .main-comment .comment .comment-info .usefulness {
+  color: azure;
+  background: linear-gradient(to bottom right, rgba(68, 138, 255, 0.5), rgba(68, 138, 255, 0.2), white);
+  border-radius: 20px 0 0 5px;
+  overflow: hidden;
+}
+.comments .posted-comments .main-comment .comment .comment-info .usefulness > div {
+  max-width: 40px;
+  margin: 1vw auto;
+  cursor: pointer;
+}
+.comments .posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a::before {
+  content: "";
+  display: block;
+  background-image: url("../image/study.png");
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+  float: left;
+  margin-right: 10px;
+}
+.comments .posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a:hover {
+  color: #448aff;
+}
+.comments .posted-comments .main-comment .comment .comment-info .see-comment p {
+  padding-left: 3vw;
+  padding-right: 3vw;
+  font-family: "Josefin", sans-serif;
+  font-style: italic;
+}
+.comments .posted-comments .main-comment .comment .reply-to {
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  font-size: 13px;
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  background-color: #fff;
+  padding: 0 10px;
+  border: 1px dashed grey;
+  cursor: pointer;
+}
+.comments .posted-comments .main-comment .comment .reply-to:hover {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+.comments .posted-comments .main-comment .sub-comment {
+  margin-left: 5vw;
 }
 
 /*# sourceMappingURL=blog-main.css.map */
