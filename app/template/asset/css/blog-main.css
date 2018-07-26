@@ -2,6 +2,14 @@ img {
   width: 100%;
 }
 
+resizeable:empty:not(:focus)::before, .comments .my-comment #text-area:empty:not(:focus)::before {
+  content: attr(data-text);
+  color: grey;
+}
+resizeable:not(:empty), .comments .my-comment #text-area:not(:empty) {
+  box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+}
+
 html {
   font-family: "Poppins", sans-serif !important;
   margin-top: 20vw;
@@ -169,10 +177,35 @@ html {
 
 .comments {
   margin-top: 100px;
+}
+.comments .my-comment {
+  border: 1px dashed black;
+  border-left: none;
+  border-right: none;
+  padding: 20px;
+}
+.comments .my-comment:focus {
+  background-color: red;
+}
+.comments .my-comment #text-area {
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  min-height: 80px;
+}
+.comments .my-comment #text-area:focus {
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+}
+.comments .my-comment button {
+  display: none;
+  float: right;
+}
+.comments .posted-comments {
   margin-left: 5vw;
 }
 .comments .posted-comments .main-comment {
-  margin: 100px auto;
+  margin: 50px auto 100px;
 }
 .comments .posted-comments .main-comment .comment {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);

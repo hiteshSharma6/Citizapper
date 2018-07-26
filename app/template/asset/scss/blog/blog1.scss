@@ -5,6 +5,17 @@ $margin-right-default: 10px;
 @import "../box-shadow";
 @import "../selectors";
 
+resizeable {
+  &:empty:not(:focus)::before {
+    content:attr(data-text);
+    color: grey;
+  }
+  
+  &:not(:empty) {
+    box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+  }
+}
+
 html {
   font-family: $font-poppins !important;
   margin-top: 20vw;
@@ -183,16 +194,48 @@ html {
 
 .comments {
   margin-top: 100px;
-  margin-left: 5vw;
   
-  .your-comment {
+  .my-comment {
+    border: 1px dashed black;
+    border-left: none;
+    border-right: none;
+    padding: 20px;
+    
+    &:focus {
+      background-color: red;
+      
+    }
+    
+    
+    & #text-area {
+      border-radius: 10px;
+      padding: 10px;
+      resize: none;
+      min-height: 80px;
+      @extend resizeable;
+            
+      &:focus {
+        outline: none;
+        box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+        
+      }
+      
+    }
+    
+    button {
+      display: none;
+      float: right;
+      
+      
+    }  
     
   }
   
   .posted-comments {
+    margin-left: 5vw;
     
     .main-comment {
-      margin: 100px auto;
+      margin: 50px auto 100px;
       
       .comment {
         @include box-shadow(z-depth-2);

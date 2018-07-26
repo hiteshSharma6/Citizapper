@@ -80,7 +80,10 @@
       </div>
     </div>
     <div class="comments">
-      <div class="my-comment"></div>
+      <div class="my-comment">
+        <div contenteditable="true" data-text="COMMENT" id="text-area"></div>
+          <button class="btn btn-" id="post-button">Post Comment</button>
+      </div>
       <div class="posted-comments">
         <div id="c-1" class="main-comment">
 
@@ -310,13 +313,48 @@
     </div>
   </div>
 
-  <script src="/javascripts/vendor/modernizr-3.6.0.min.js" async></script>
+  <script src="../../public/javascripts/vendor/modernizr-3.6.0.min.js" async></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" async></script>
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\\/script>');
   </script>
-  <script src="../js/main.js"></script>
+  
+  <script>
+    var postButton = document.getElementById("post-button");
+    var textArea = document.getElementById("text-area");
+    textArea.addEventListener("blur", (e) => {
+      var innerValue = e.target.innerText;
+      if(innerValue.trim() === "") {
+        e.target.innerText = "";
+        console.log("whwe");
+        postButton.style.display = "none";
+        e.target.style.marginBottom = "0px";
+      }
+    });
+//    textArea.addEventListener("focus", (e) => {
+//      var innerValue = e.target.innerText;
+//      if(innerValue.trim() !== "") {
+//        console.log("nooope");
+//        postButton.disabled = "true";
+//        postButton.style.display = "block";
+//      } else {
+//        console.log("sad");
+//        postButton.style.display = "none";
+//        postButton.disabled = "false";
+//      }
+//    });
+    textArea.addEventListener("keyup", (e) => {
+      var innerValue = e.target.innerText;
+      if(innerValue.trim() !== "") {
+        postButton.disabled = false;
+        postButton.style.display = "block";
+        e.target.style.marginBottom = "20px";
+      } else {
+        postButton.disabled = true;
+      }
+    });
+  </script>
 
 </body>
 
