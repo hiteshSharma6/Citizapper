@@ -2,6 +2,14 @@ img {
   width: 100%;
 }
 
+resizeable:empty:not(:focus)::before, .comments .my-comment #text-area:empty:not(:focus)::before {
+  content: attr(data-text);
+  color: grey;
+}
+resizeable:not(:empty), .comments .my-comment #text-area:not(:empty) {
+  box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+}
+
 html {
   font-family: "Poppins", sans-serif !important;
   margin-top: 20vw;
@@ -114,7 +122,7 @@ html {
   width: 70%;
   margin: 200px auto 50px;
   border-radius: 10px;
-  background-color: rgba(68, 138, 255, 0.05);
+  background-color: rgba(68, 138, 255, 0.1);
   padding: 2vw 5vw;
   display: flex;
 }
@@ -169,32 +177,58 @@ html {
 
 .comments {
   margin-top: 100px;
+}
+.comments .my-comment {
+  border: 1px dashed black;
+  border-left: none;
+  border-right: none;
+  padding: 20px;
+}
+.comments .my-comment:focus {
+  background-color: red;
+}
+.comments .my-comment #text-area {
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  min-height: 80px;
+}
+.comments .my-comment #text-area:focus {
+  outline: none;
+  box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+}
+.comments .my-comment button {
+  display: none;
+  float: right;
+  transform: translateY(-35px);
+}
+.comments #posted-comments {
   margin-left: 5vw;
 }
-.comments .posted-comments .main-comment {
-  margin: 100px auto;
+.comments #posted-comments .main-comment {
+  margin: 5vw auto 100px;
 }
-.comments .posted-comments .main-comment .comment {
+.comments #posted-comments .main-comment .comment {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   position: relative;
-  margin-top: 30px;
+  margin-top: 3vw;
   border-radius: 20px 5px 20px 5px;
 }
-.comments .posted-comments .main-comment .comment .comment-info {
+.comments #posted-comments .main-comment .comment .comment-info {
   margin: 0;
 }
-.comments .posted-comments .main-comment .comment .comment-info .usefulness {
+.comments #posted-comments .main-comment .comment .comment-info .usefulness {
   color: azure;
   background: linear-gradient(to bottom right, rgba(68, 138, 255, 0.5), rgba(68, 138, 255, 0.2), white);
   border-radius: 20px 0 0 5px;
   overflow: hidden;
 }
-.comments .posted-comments .main-comment .comment .comment-info .usefulness > div {
+.comments #posted-comments .main-comment .comment .comment-info .usefulness > div {
   max-width: 40px;
-  margin: 1vw auto;
+  margin: 10px auto;
   cursor: pointer;
 }
-.comments .posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a::before {
+.comments #posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a::before {
   content: "";
   display: block;
   background-image: url("../image/study.png");
@@ -204,16 +238,20 @@ html {
   float: left;
   margin-right: 10px;
 }
-.comments .posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a:hover {
+.comments #posted-comments .main-comment .comment .comment-info .see-comment .commenter-name a:hover {
   color: #448aff;
 }
-.comments .posted-comments .main-comment .comment .comment-info .see-comment p {
+.comments #posted-comments .main-comment .comment .comment-info .see-comment p {
   padding-left: 3vw;
   padding-right: 3vw;
   font-family: "Josefin", sans-serif;
   font-style: italic;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
-.comments .posted-comments .main-comment .comment .reply-to {
+.comments #posted-comments .main-comment .comment .reply-to {
   position: absolute;
   right: 20px;
   bottom: -10px;
@@ -227,12 +265,22 @@ html {
   border: 1px dashed grey;
   cursor: pointer;
 }
-.comments .posted-comments .main-comment .comment .reply-to:hover {
+.comments #posted-comments .main-comment .comment .reply-to:hover {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
-.comments .posted-comments .main-comment .sub-comment {
+.comments #posted-comments .main-comment .sub-comment {
   margin-left: 5vw;
+  position: relative;
+}
+.comments #posted-comments .main-comment .sub-comment .draw-line {
+  position: absolute;
+  left: -2vw;
+  top: -3vw;
+  width: 2vw;
+  height: 9vw;
+  border-bottom-left-radius: 15px;
+  box-shadow: -2px 2px 2px rgba(68, 138, 255, 0.5);
 }
 
 /*# sourceMappingURL=blog-main.css.map */

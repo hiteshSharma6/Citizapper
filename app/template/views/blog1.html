@@ -80,10 +80,14 @@
       </div>
     </div>
     <div class="comments">
-      <div class="my-comment"></div>
-      <div class="posted-comments">
+      <div class="my-comment">
+        <div contenteditable="true" data-text="WRITE YOUR COMMENT" id="text-area"></div>
+          <button class="btn" id="post-button">Post Comment</button>
+      </div>
+      <div id="posted-comments">
         <div id="c-1" class="main-comment">
 
+          <div class="draw-line"></div>
           <div class="comment">
 
             <div class="comment-info row">
@@ -196,6 +200,7 @@
 
         <div id="c-2" class="main-comment">
 
+          <div class="draw-line"></div>
           <div class="comment">
 
             <div class="comment-info row">
@@ -256,11 +261,10 @@
                 </div>
                 <div class="reply-to">Reply to Johansan Thomes</div>
               </div>
-            </div>
-
-            <div id="c-2-1-2" class="sub-comment">
-              <div class="draw-line"></div>
-              <div class="comment">
+              
+              <div id="c-2-1-1-1" class="sub-comment">
+                <div class="draw-line"></div>
+                <div class="comment">
 
                 <div class="comment-info row">
                   <div class="usefulness col-2">
@@ -278,6 +282,8 @@
                 </div>
                 <div class="reply-to">Reply to Johansan Thomes</div>
               </div>
+              </div>
+
             </div>
 
           </div>
@@ -297,7 +303,7 @@
                       <h6>Johansan Thomes</h6>
                     </a>
                   </div>
-                  <p>Great Work c-1</p>
+                  <p>Hola! Me nombre es Alejandro, pero todos me llaman Sasha. Soy de los Emedstados Unidos. Mi familia vive en Michigan. Mi papá es un doctor y mi mamá es una enfermera. Tengo cuatro hermanos y dos hermanas. Mi familia es muy grande! Soy el mas viejo. Tengo treinta y uno años.Hola! Me nombre es Alejandro, pero todos me llaman Sasha. Soy de los Emedstados Unidos. Mi familia vive en Michigan. Mi papá es un doctor y mi mamá es una enfermera. Tengo cuatro hermanos y dos hermanas. Mi familia es muy grande! Soy el mas viejo. Tengo treinta y uno años.</p>
                 </div>
               </div>
               <div class="reply-to">Reply to Johansan Thomes</div>
@@ -310,13 +316,99 @@
     </div>
   </div>
 
-  <script src="/javascripts/vendor/modernizr-3.6.0.min.js" async></script>
+  <script src="../../public/javascripts/vendor/modernizr-3.6.0.min.js" async></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" async></script>
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\\/script>');
   </script>
-  <script src="../js/main.js"></script>
+  
+  <script>
+    var postButton = document.getElementById("post-button");
+    var textArea = document.getElementById("text-area");
+    textArea.addEventListener("blur", (e) => {
+      var innerValue = e.target.innerText;
+      if(innerValue.trim() === "") {
+        e.target.innerText = "";
+        console.log("whwe");
+        postButton.style.display = "none";
+        e.target.style.marginBottom = "0px";
+      }
+    });
+    textArea.addEventListener("keyup", (e) => {
+      var innerValue = e.target.innerText;
+      if(innerValue.trim() !== "") {
+        postButton.disabled = false;
+        postButton.style.display = "block";
+        e.target.style.marginBottom = "45px";
+      } else {
+        postButton.disabled = true;
+      }
+    });
+  </script>
+  
+  <script>
+    $(window).ready(()=>{
+      drawLines();
+    });
+    $(window).resize(()=>{
+      drawLines();
+    });
+    
+    function drawLines() {
+      $('#posted-comments').children().each(
+      (i, mainComment) => {
+        var topSubComment = mainComment.children;
+//        console.log(mainComment);
+//        for(var i=1; i<topSubComment.length; i++) {
+//          createSideLine(topSubComment[i]);
+//          console.log(topSubComment[i]);
+//        }
+        createSideLine(mainComment, {height:6,top:0});
+      }
+    );
+    }
+    
+    
+    function createSideLine(parent, property) {
+      var top = "-3vw";
+      var subComment = parent.children;
+      var newProperty = { height:6, top:0 };
+      var addToNew = { height:6, top:0 };
+      
+      for(var i=2; i<parent.children.length; i++) {
+        
+        console.log(window.getComputedStyle(subComment[1]), null);
+        var thisCommentHeight = subComment[1].height;
+        
+        newProperty.height += 2;
+        newProperty.top += -2;
+//        property = {newHeight, newTop};
+        property.height += 3;
+        property.top -= 3;
+        console.log(property);
+        console.log("NEWPROPERTY", newProperty);
+        
+        subComment[i].firstElementChild.style.top = property.top+"vw";
+        subComment[i].firstElementChild.style.height = property.height+"vw";
+        
+        addToNew = createSideLine(subComment[i], {height:6,top:0});
+        console.log("ADDNEWPROPERTY", addToNew);
+        property.height += addToNew.height;
+        property.top += addToNew.top;
+        
+      }
+        property.height += addToNew.height;
+        property.top += addToNew.top;
+      
+      console.log("PROPERTY", property);
+
+      return property;
+//      const { width, top } = createSideLine() {
+//        
+//      }
+    }
+  </script>
 
 </body>
 

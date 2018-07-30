@@ -1,0 +1,259 @@
+@import "../box-shadow";
+
+
+
+$img-base-folder: "../image/";
+
+
+
+@mixin header-color($color, $shadow:false) {
+  
+  @if $color == "color1" {
+    background-color: rgba(71, 255, 16, 0.65);
+    @if $shadow == true {
+      box-shadow: 0px 0px 6px rgba(71, 255, 16, 0.8);
+    }
+  }
+  
+  @else if $color == "color2" {
+    background-color: rgba(255, 0, 253, 0.65);
+    @if $shadow == true {
+      box-shadow: 0px 0px 6px rgba(255, 0, 253, 0.8);
+    }
+  }
+  
+  @else if $color == "color3" {
+    background-color: rgba(165, 0, 211, 0.65);
+    @if $shadow == true {
+      box-shadow: 0px 0px 6px rgba(165, 0, 211, 0.8);
+    }
+  }
+  
+  @else if $color == "color4" {
+    background-color: rgba(0, 210, 213, 0.65);
+    @if $shadow == true {
+      box-shadow: 0px 0px 6px rgba(0, 210, 213, 0.8);
+    }
+  }
+  
+}
+
+
+
+@mixin addBackgroundImage($img-name) {
+    
+  &::after {
+    content: "";
+    background-image: url($img-base-folder + $img-name);
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-size: cover;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+  }
+  
+}
+
+
+
+@mixin section-heading() {
+  position: relative;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  text-shadow:0px 0px 5px #fff;
+  
+  h6 {
+    font-weight: 800;
+    text-transform: uppercase;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-shadow:0px 0px 5px #fff, 0px 0px 10px rgba(0, 0, 0, 0.5);
+    
+  }
+  
+  a {
+    position: absolute;
+    right: 20px;
+    top: 45%;
+    color: #fff;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+    &::after {
+      content: "";
+      background: url("../image/finger-of-a-hand-pointing-to-right-direction.png") no-repeat;
+      float: right;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      padding-bottom: 2px;
+      background-size: contain;
+      margin-left: 7px;
+      background-origin: content-box;
+      background-position: left;
+      
+    }
+  
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blog-category {
+  
+  .heading {
+    @include section-heading;
+    @include header-color("color2", true);
+    
+  }
+
+  .category {
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+    margin-bottom: 30px;
+    
+    a {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-right: 30px;
+      height: 35%;
+      
+      h6 {
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+        margin: 0;
+        padding-top: 10px;
+        height: 100%;
+        text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
+        
+        &:hover {
+          font-weight: bold;
+          font-size: 17px;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  #c1 {
+    @include addBackgroundImage("blog1.jpeg");
+  }
+  
+  #c2 {
+    @include addBackgroundImage("blog2.jpeg");
+  }
+  
+  #c3 {
+    @include addBackgroundImage("blog3.jpeg");
+  }
+  
+  #c4 {
+    @include addBackgroundImage("blog1.jpeg");
+  }
+  
+  #c5 {
+    @include addBackgroundImage("blog2.jpeg");
+  }
+  
+  #c6 {
+    @include addBackgroundImage("blog3.jpeg");
+  }
+  
+  #c7 {
+    @include addBackgroundImage("blog1.jpeg");
+  }
+  
+  #c8 {
+    @include addBackgroundImage("blog2.jpeg");
+  }
+  
+}
+
+
+
+
+
+
+
+.todays-feed {
+  margin: 50px auto;
+  padding: 5px;
+  @include box-shadow("z-depth-4");
+  
+  .heading {
+    @include section-heading;
+    @include header-color("color4");
+    margin: 30px 4vw 40px;
+    
+  }
+  
+  .category {
+    overflow: hidden;
+    height: 100px;
+    position: relative;
+    margin-bottom: 30px;
+    
+    a {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-right: 30px;
+      height: 35%;
+      
+      h6 {
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+        margin: 0;
+        padding-top: 10px;
+        height: 100%;
+        text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
+        
+        &:hover {
+          font-weight: bold;
+          font-size: 17px;
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  #c1 {
+    @include addBackgroundImage("blog1.jpeg");
+  }
+  
+  #c3 {
+    @include addBackgroundImage("blog3.jpeg");
+  }
+  
+}

@@ -1,9 +1,21 @@
 $font-josefin: 'Josefin', sans-serif;
 $font-poppins: 'Poppins', sans-serif;
 $margin-right-default: 10px;
+//$comment-height: 122px;
 
 @import "../box-shadow";
 @import "../selectors";
+
+resizeable {
+  &:empty:not(:focus)::before {
+    content:attr(data-text);
+    color: grey;
+  }
+  
+  &:not(:empty) {
+    box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+  }
+}
 
 html {
   font-family: $font-poppins !important;
@@ -128,7 +140,7 @@ html {
     width: 70%;
     margin: 200px auto 50px;
     border-radius: 10px;
-    background-color: rgba(68, 138, 255, 0.05);
+    background-color: rgba(68, 138, 255, 0.1);
     padding: 2vw 5vw;
     display: flex;
     
@@ -183,22 +195,54 @@ html {
 
 .comments {
   margin-top: 100px;
-  margin-left: 5vw;
   
-  .your-comment {
+  .my-comment {
+    border: 1px dashed black;
+    border-left: none;
+    border-right: none;
+    padding: 20px;
+    
+    &:focus {
+      background-color: red;
+      
+    }
+    
+    & #text-area {
+      border-radius: 10px;
+      padding: 10px;
+      resize: none;
+      min-height: 80px;
+      @extend resizeable;
+            
+      &:focus {
+        outline: none;
+        box-shadow: 1px 1px 5px rgba(68, 138, 255, 0.3);
+        
+      }
+      
+    }
+    
+    button {
+      display: none;
+      float: right;
+      transform: translateY(-35px);
+      
+    }  
     
   }
   
-  .posted-comments {
+  #posted-comments {
+    margin-left: 5vw;
     
     .main-comment {
-      margin: 100px auto;
+      margin: 5vw auto 100px;
       
       .comment {
         @include box-shadow(z-depth-2);
         position: relative;
-        margin-top: 30px;
+        margin-top: 3vw;
         border-radius: 20px 5px 20px 5px;
+//        height: $comment-height;
         
         .comment-info {
           margin: 0;
@@ -211,7 +255,7 @@ html {
             
             & > div {
               max-width: 40px;
-              margin: 1vw auto;
+              margin: 10px auto;
               cursor: pointer;
               
             }
@@ -238,7 +282,10 @@ html {
               padding-right: 3vw;
               font-family: $font-josefin;
               font-style: italic;
-              
+              overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;             
             }
             
           }
@@ -271,6 +318,19 @@ html {
       
       .sub-comment {
         margin-left: 5vw;
+        position: relative;
+//        4
+        .draw-line {
+          position: absolute;
+          left: -2vw;
+          top: -3vw;
+          width: 2vw;
+          height: 9vw;
+          border-bottom-left-radius: 15px;
+          box-shadow: -2px 2px 2px rgba(68, 138, 255, 0.5);
+          
+        }
+        
       }
       
     }
