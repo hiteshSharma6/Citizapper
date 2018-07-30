@@ -1,0 +1,298 @@
+.blog-category .heading {
+  position: relative;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 5px #fff;
+  background-color: rgba(255, 0, 253, 0.65);
+  box-shadow: 0px 0px 6px rgba(255, 0, 253, 0.8);
+}
+.blog-category .heading h6 {
+  font-weight: 800;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.blog-category .heading a {
+  position: absolute;
+  right: 20px;
+  top: 45%;
+  color: #fff;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+}
+.blog-category .heading a:hover {
+  text-decoration: underline;
+}
+.blog-category .heading a::after {
+  content: "";
+  background: url("../image/finger-of-a-hand-pointing-to-right-direction.png") no-repeat;
+  float: right;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding-bottom: 2px;
+  background-size: contain;
+  margin-left: 7px;
+  background-origin: content-box;
+  background-position: left;
+}
+.blog-category .category {
+  overflow: hidden;
+  height: 100px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.blog-category .category a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-right: 30px;
+  height: 35%;
+}
+.blog-category .category a h6 {
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+  margin: 0;
+  padding-top: 10px;
+  height: 100%;
+  text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
+}
+.blog-category .category a h6:hover {
+  font-weight: bold;
+  font-size: 17px;
+}
+.blog-category #c1::after {
+  content: "";
+  background-image: url("../image/blog1.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c2::after {
+  content: "";
+  background-image: url("../image/blog2.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c3::after {
+  content: "";
+  background-image: url("../image/blog3.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c4::after {
+  content: "";
+  background-image: url("../image/blog1.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c5::after {
+  content: "";
+  background-image: url("../image/blog2.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c6::after {
+  content: "";
+  background-image: url("../image/blog3.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c7::after {
+  content: "";
+  background-image: url("../image/blog1.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.blog-category #c8::after {
+  content: "";
+  background-image: url("../image/blog2.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.todays-feed {
+  margin: 50px auto;
+  padding: 5px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+}
+.todays-feed .heading {
+  position: relative;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 5px #fff;
+  background-color: rgba(0, 210, 213, 0.65);
+  margin: 30px 4vw 40px;
+}
+.todays-feed .heading h6 {
+  font-weight: 800;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 5px #fff, 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.todays-feed .heading a {
+  position: absolute;
+  right: 20px;
+  top: 45%;
+  color: #fff;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+}
+.todays-feed .heading a:hover {
+  text-decoration: underline;
+}
+.todays-feed .heading a::after {
+  content: "";
+  background: url("../image/finger-of-a-hand-pointing-to-right-direction.png") no-repeat;
+  float: right;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding-bottom: 2px;
+  background-size: contain;
+  margin-left: 7px;
+  background-origin: content-box;
+  background-position: left;
+}
+.todays-feed .category {
+  overflow: hidden;
+  height: 100px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.todays-feed .category a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-right: 30px;
+  height: 35%;
+}
+.todays-feed .category a h6 {
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+  margin: 0;
+  padding-top: 10px;
+  height: 100%;
+  text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
+}
+.todays-feed .category a h6:hover {
+  font-weight: bold;
+  font-size: 17px;
+}
+.todays-feed #c1::after {
+  content: "";
+  background-image: url("../image/blog1.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.todays-feed #c3::after {
+  content: "";
+  background-image: url("../image/blog3.jpeg");
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: cover;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*# sourceMappingURL=blogs-main.css.map */
