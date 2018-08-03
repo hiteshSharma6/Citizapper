@@ -3,6 +3,8 @@
   padding: 5px 10px;
   margin-bottom: 20px;
   text-shadow: 0px 0px 5px #fff;
+  margin-left: -15px;
+  margin-right: -15px;
   background-color: rgba(255, 0, 253, 0.65);
   box-shadow: 0px 0px 6px rgba(255, 0, 253, 0.8);
 }
@@ -16,13 +18,15 @@
 .blog-category .heading a {
   position: absolute;
   right: 20px;
-  top: 45%;
+  top: 15%;
   color: #fff;
   word-spacing: 2px;
   letter-spacing: 0.5px;
+  padding: 5px 10px;
 }
 .blog-category .heading a:hover {
   text-decoration: underline;
+  background-color: #ff4081;
 }
 .blog-category .heading a::after {
   content: "";
@@ -39,7 +43,7 @@
 }
 .blog-category .category {
   overflow: hidden;
-  height: 100px;
+  height: 80px;
   position: relative;
   margin-bottom: 30px;
 }
@@ -48,12 +52,12 @@
   bottom: 0;
   width: 100%;
   padding-right: 30px;
-  height: 35%;
+  height: 45%;
 }
 .blog-category .category a h6 {
   text-align: center;
   color: #fff;
-  background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+  background: linear-gradient(to top, rgba(0, 183, 255, 0.5), rgba(242, 113, 242, 0.2));
   margin: 0;
   padding-top: 10px;
   height: 100%;
@@ -61,7 +65,7 @@
 }
 .blog-category .category a h6:hover {
   font-weight: bold;
-  font-size: 17px;
+  font-size: 18px;
 }
 .blog-category #c1::after {
   content: "";
@@ -69,7 +73,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -85,7 +89,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -101,7 +105,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -117,7 +121,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -133,7 +137,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -149,7 +153,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -165,7 +169,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -181,7 +185,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -193,15 +197,20 @@
 }
 
 .todays-feed {
-  margin: 50px auto;
-  padding: 5px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -1.5vw;
+  margin-right: -1.5vw;
+  padding: 5px 30px;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 }
 .todays-feed .heading {
   position: relative;
   padding: 5px 10px;
   margin-bottom: 20px;
   text-shadow: 0px 0px 5px #fff;
+  margin-left: -15px;
+  margin-right: -15px;
   background-color: rgba(0, 210, 213, 0.65);
   margin: 30px 4vw 40px;
 }
@@ -215,13 +224,15 @@
 .todays-feed .heading a {
   position: absolute;
   right: 20px;
-  top: 45%;
+  top: 15%;
   color: #fff;
   word-spacing: 2px;
   letter-spacing: 0.5px;
+  padding: 5px 10px;
 }
 .todays-feed .heading a:hover {
   text-decoration: underline;
+  background-color: #ff4081;
 }
 .todays-feed .heading a::after {
   content: "";
@@ -236,63 +247,79 @@
   background-origin: content-box;
   background-position: left;
 }
-.todays-feed .category {
-  overflow: hidden;
-  height: 100px;
+.todays-feed .top-feed {
   position: relative;
-  margin-bottom: 30px;
 }
-.todays-feed .category a {
+.todays-feed .top-feed img {
+  max-height: 460px;
+}
+.todays-feed .top-feed .desc {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding-right: 30px;
-  height: 35%;
+  padding: 20px;
+  bottom: -125px;
+  margin: 0 8%;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 84%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-.todays-feed .category a h6 {
+.todays-feed .top-feed .desc h4 {
   text-align: center;
-  color: #fff;
-  background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+  margin-top: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 30px;
+  color: #000;
+}
+.todays-feed .top-feed .desc .intro p {
+  height: 80px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.todays-feed .top-feed .desc .tools {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+}
+.todays-feed .top-feed .desc .tools div {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.todays-feed .other-feed {
+  position: relative;
+  margin-bottom: 40px;
+}
+.todays-feed .other-feed:hover img {
+  opacity: 0.9;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.todays-feed .other-feed:last-child {
+  margin-bottom: 20px;
+}
+.todays-feed .other-feed img {
+  max-height: 180px;
+  display: block;
+  margin: auto;
+}
+.todays-feed .other-feed a {
+  position: absolute;
+  bottom: 0;
   margin: 0;
-  padding-top: 10px;
-  height: 100%;
-  text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
+  background: linear-gradient(to right, rgba(68, 138, 255, 0.8), rgba(242, 113, 242, 0.6));
+  width: 100%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  transition-duration: 0.2s;
 }
-.todays-feed .category a h6:hover {
-  font-weight: bold;
-  font-size: 17px;
-}
-.todays-feed #c1::after {
-  content: "";
-  background-image: url("../image/blog1.jpeg");
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  background-size: cover;
-  opacity: 0.8;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.todays-feed #c3::after {
-  content: "";
-  background-image: url("../image/blog3.jpeg");
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  background-size: cover;
-  opacity: 0.8;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  padding-left: 15px;
-  padding-right: 15px;
+.todays-feed .other-feed a:hover {
+  padding: 10px 5px;
 }
 
 /*# sourceMappingURL=blogs-main.css.map */

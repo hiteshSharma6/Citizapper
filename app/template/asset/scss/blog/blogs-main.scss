@@ -36,6 +36,12 @@ $img-base-folder: "../image/";
     }
   }
   
+  @else {
+    @if $shadow == true {
+      box-shadow: 0px 0px 6px rgba(0, 210, 213, 0.8);
+    }
+  }
+  
 }
 
 
@@ -48,7 +54,7 @@ $img-base-folder: "../image/";
     background-repeat: no-repeat;
     background-clip: content-box;
     background-size: cover;
-    opacity: 0.8;
+    opacity: 0.9;
     top: 0;
     left: 0;
     bottom: 0;
@@ -69,6 +75,8 @@ $img-base-folder: "../image/";
   padding: 5px 10px;
   margin-bottom: 20px;
   text-shadow:0px 0px 5px #fff;
+  margin-left: -15px;
+  margin-right: -15px;
   
   h6 {
     font-weight: 800;
@@ -82,13 +90,15 @@ $img-base-folder: "../image/";
   a {
     position: absolute;
     right: 20px;
-    top: 45%;
+    top: 15%;
     color: #fff;
     word-spacing: 2px;
     letter-spacing: 0.5px;
+    padding: 5px 10px;
     
     &:hover {
       text-decoration: underline;
+      background-color: #ff4081;
     }
     
     &::after {
@@ -132,7 +142,7 @@ $img-base-folder: "../image/";
 
   .category {
     overflow: hidden;
-    height: 100px;
+    height: 80px;
     position: relative;
     margin-bottom: 30px;
     
@@ -141,12 +151,12 @@ $img-base-folder: "../image/";
       bottom: 0;
       width: 100%;
       padding-right: 30px;
-      height: 35%;
+      height: 45%;
       
       h6 {
         text-align: center;
         color: #fff;
-        background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
+        background: linear-gradient(to top, rgba(0, 183, 255, 0.5),  rgba(242,113,242,0.2));
         margin: 0;
         padding-top: 10px;
         height: 100%;
@@ -154,7 +164,7 @@ $img-base-folder: "../image/";
         
         &:hover {
           font-weight: bold;
-          font-size: 17px;
+          font-size: 18px;
         }
         
       }
@@ -204,9 +214,12 @@ $img-base-folder: "../image/";
 
 
 .todays-feed {
-  margin: 50px auto;
-  padding: 5px;
-  @include box-shadow("z-depth-4");
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -1.5vw;
+  margin-right: -1.5vw;
+  padding: 5px 30px;
+  @include box-shadow("z-depth-3");
   
   .heading {
     @include section-heading;
@@ -215,45 +228,97 @@ $img-base-folder: "../image/";
     
   }
   
-  .category {
-    overflow: hidden;
-    height: 100px;
+  .top-feed {
     position: relative;
-    margin-bottom: 30px;
+    
+    img {
+      max-height: 460px;
+    }
+    
+    .desc {
+      position: absolute;
+      padding: 20px;
+      bottom: -125px;
+      margin: 0 8%;
+      background-color: rgba(255,255,255,0.9);
+      width: 84%;
+      @include box-shadow("z-depth-1");
+      
+      h4 {
+        text-align: center;
+        margin-top: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        overflow: hidden;
+        margin-bottom: 30px;
+        color: #000;
+      }
+      
+      .intro {
+        
+        p {
+          height: 80px;
+          overflow: hidden;
+          font-size: 14px;
+        }
+      }
+      
+      .tools {
+        position: absolute;
+        bottom: -20px;;
+        right: 50px;
+        
+        div {
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          padding: 10px;          
+          border-radius: 50%;
+          @include box-shadow("z-depth-1");
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  
+  .other-feed {
+    position: relative;
+    margin-bottom: 40px;
+    
+    
+    
+    &:hover img {
+      opacity: 0.9;
+      @include box-shadow("z-depth-2");
+    }
+    
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    
+    img {
+      max-height: 180px;
+      display: block;
+      margin: auto;
+      
+    }
     
     a {
       position: absolute;
       bottom: 0;
+      margin: 0;
+      background: linear-gradient(to right, rgba(68,138,255,0.8), rgba(242,113,242,0.6));
       width: 100%;
-      padding-right: 30px;
-      height: 35%;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+      transition-duration: 0.2s;
       
-      h6 {
-        text-align: center;
-        color: #fff;
-        background: linear-gradient(to bottom, transparent, rgba(0, 183, 255, 0.5));
-        margin: 0;
-        padding-top: 10px;
-        height: 100%;
-        text-shadow: 0px 0px 5px #0a88ff, 0px 0px 10px #fff;
-        
-        &:hover {
-          font-weight: bold;
-          font-size: 17px;
-        }
-        
+      &:hover {
+        padding: 10px 5px;
       }
-      
     }
-    
-  }
-  
-  #c1 {
-    @include addBackgroundImage("blog1.jpeg");
-  }
-  
-  #c3 {
-    @include addBackgroundImage("blog3.jpeg");
   }
   
 }
