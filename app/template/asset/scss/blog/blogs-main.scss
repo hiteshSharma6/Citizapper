@@ -215,11 +215,11 @@ $img-base-folder: "../image/";
 
 .todays-feed {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   margin-left: -1.5vw;
   margin-right: -1.5vw;
   padding: 5px 30px;
-  @include box-shadow("z-depth-3");
+  @include box-shadow("z-depth-3", 0, 210, 213);
   
   .heading {
     @include section-heading;
@@ -352,7 +352,7 @@ $img-base-folder: "../image/";
   .feed {
     position: relative;
     overflow: hidden;
-    background-color: rgba(71, 255, 16, 0.05);
+//    background-color: rgba(71, 255, 16, 0.05);
     @include box-shadow("z-depth-2", 71, 255, 16);
     
     .upper-section {
@@ -382,7 +382,7 @@ $img-base-folder: "../image/";
       .tools {
         position: absolute;
         top: 180px;;
-        right: 30px;
+        right: 20px;
         
         div {
           cursor: pointer;
